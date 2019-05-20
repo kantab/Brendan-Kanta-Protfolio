@@ -1,5 +1,5 @@
 
-<a href="http://public.district196.org/rhs/"><img src="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjd49K02ariAhVJ0KwKHSZ_BqkQjRx6BAgBEAU&url=http%3A%2F%2Fpublic.district196.org%2Frhs%2F&psig=AOvVaw1rjKE8HBHnHZu9bJyeEsxA&ust=1558461972315312" title="Rosemount High School" alt="RHS"></a>
+<a href="http://public.district196.org/rhs/"><img src="https://www.google.com/search?q=rosemount+high+school+logo&rlz=1C1CHBF_enUS766US766&source=lnms&tbm=isch&sa=X&ved=0ahUKEwim7NOx2ariAhVRMqwKHYqTDkQQ_AUIDigB&biw=1280&bih=578#imgrc=2vMvxjMdWi6dBM:" title="Rosemount High School" alt="RHS"></a>
 
 
 
