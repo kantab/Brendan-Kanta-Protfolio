@@ -10,18 +10,20 @@
 > This portfolio will showcase the projects that I have been working on in my senior year of High School.
 
 
-**Badges will go here**
+**The projects I worked on in Java are listed here**
 
-- build status
-- issues (waffle.io maybe)
-- devDependencies
-- npm package
-- coverage
-- slack
+- Dice
+- Chemotaxis
+- Starfield
+- Flesch Readability
+- Movie Sentiment Review
+- maps/data project
 - downloads
 - gitter chat
 - license
 - etc.
+
+**The projects I worked on in C++ are listed here**
 
 
 
