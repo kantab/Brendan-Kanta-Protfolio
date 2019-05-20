@@ -3,7 +3,7 @@
 
 
 
-***INSERT GRAPHIC HERE (include hyperlink in image)***
+
 
 # Senior-Year-Protfolio
 
