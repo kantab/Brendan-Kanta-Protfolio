@@ -10,7 +10,7 @@
 > This portfolio will showcase the projects that I have been working on in my senior year of High School.
 
 
-# csPortfolio
+# Java Portfolio
 
 
 <details>
