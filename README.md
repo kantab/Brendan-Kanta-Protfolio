@@ -18,10 +18,7 @@
 - Flesch Readability
 - Movie Sentiment Review
 - maps/data project
-- downloads
-- gitter chat
-- license
-- etc.
+
 
 **The projects I worked on in C++ are listed here**
 
