@@ -1,5 +1,5 @@
 
-<a href="http://public.district196.org/rhs/"><img src="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjd49K02ariAhVJ0KwKHSZ_BqkQjRx6BAgBEAU&url=http%3A%2F%2Fpublic.district196.org%2Frhs%2F&psig=AOvVaw1rjKE8HBHnHZu9bJyeEsxA&ust=1558461972315312" title="Rosemount High School" alt="FVCproductions"></a>
+<a href="http://public.district196.org/rhs/"><img src="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjd49K02ariAhVJ0KwKHSZ_BqkQjRx6BAgBEAU&url=http%3A%2F%2Fpublic.district196.org%2Frhs%2F&psig=AOvVaw1rjKE8HBHnHZu9bJyeEsxA&ust=1558461972315312" title="Rosemount High School" alt="RHS"></a>
 
 <!-- [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) -->
 
