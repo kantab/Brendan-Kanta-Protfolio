@@ -78,10 +78,9 @@ This project was by far the hardest for me to understand. I had a hard time unde
 # C++ Portfolio
 
 <details>
-<summary>WebPage</summary> 
+<summary>Payroll</summary> 
 <br>(https://kantab.github.io/testWeb/)
-This project was desgined to give an introduction to HTML and JS. This was the first web page I made. 
-The hardest part was understanding a new launage.
+This project was one that I worked on in my introduction to C++ class I took at Inver Hills Community College. This project was desgined to teach us how to use things such as setprecision, switchs, try/ catch statements, interfaces, user inputs, and a lot of the key foundations to help learn and understand C++. We made a few difernt variations of this project and this is the final one.
  </br>
 </details>
 
