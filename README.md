@@ -41,7 +41,7 @@ The project was desgined to learn a bit more with arrylist. The hardest part of 
 <details>
 <summary>Starfeilds</summary>
 <br>
- ```java
+ ```Java
  Particle [] p = new Particle[100];
 Particle [] p2 = new Particle[100];
 Particle [] p3 = new Particle[100];
