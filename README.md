@@ -40,7 +40,7 @@ The project was desgined to learn a bit more with arrylist. The hardest part of 
 </details>
 <details>
 <summary>Starfeilds</summary>
-<br>
+
  ```Java
  Particle [] p = new Particle[100];
 Particle [] p2 = new Particle[100];
@@ -164,6 +164,7 @@ class oddBallParticle implements Particle {
 //////////////////////////////////////////////////
  
  ```
+ <br>
 This project was by far the hardest for me to understand. I had a hard time understaning how th objects were to be displayed on the screen and the angle in which they moved. I had to partner up with other class mates so they could show me how it worked.
  </br>
 </details>
