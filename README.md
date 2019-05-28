@@ -40,7 +40,130 @@ The project was desgined to learn a bit more with arrylist. The hardest part of 
 </details>
 <details>
 <summary>Starfeilds</summary>
-<br>(https://kantab.github.io/starfield5/)
+<br>
+ ```java
+ Particle [] p = new Particle[100];
+Particle [] p2 = new Particle[100];
+Particle [] p3 = new Particle[100];
+void setup(){
+size(800,600);
+for(int i =0; i<p.length; i++){
+ p[i]= new NormalParticle();
+ p2[i]= new oddBallParticle();
+ p3[i]= new jumpoParticle();
+}
+for(int j =0; j<p2.length; j++){
+//p2[j]= new oddBallParticle();
+}
+  
+}
+void draw(){
+  
+  
+  noStroke();
+  fill( 2, 0, 0, 5);
+  rect(0, 0, width, height,50);
+  for(int i=0; i<p.length; i++){
+    p[i].move();
+    p[i].show();
+    p2[i].move();
+    p2[i].show();
+    p3[i].move();
+    p3[i].show();
+  }
+}
+
+interface Particle{
+  void show();
+  void move();
+  
+}
+////////////////////////////////////////////////////////
+class NormalParticle implements Particle {
+  double x, y, speed, angle;
+
+  public NormalParticle() {
+    x=width/2-100;
+    y=height/2-100;
+    speed=5;
+    angle=0.25;
+  }
+  void move() {
+    /* if(angle>0.025){
+     angle-=0.05;
+     }
+     else {
+     angle+=0.05;
+     }
+     */
+    if (angle>0) {
+      angle+=0.05;
+    }
+    x+=Math.cos(angle)*speed;
+    y+=Math.sin(angle)*speed;
+    angle+=0.025;
+  }
+  void show() {
+    fill(0, 255, 200);
+    //fill((int)((Math.random()*200)+150), (int)((Math.random()*200)+150), (int)((Math.random()*200)+150));
+    ellipse((int)x, (int)y, 20, 20);
+  }
+}
+//////////////////////////////////////////////////////////
+class jumpoParticle implements Particle {
+  double x, y, speed, angle;
+
+  public jumpoParticle() {
+    x=width/2+100;
+    y=height/2-100;
+    speed=5;
+    angle=0.25;
+  }
+  void move() {
+    x+=Math.cos(angle)*speed;
+    y+=Math.sin(angle)*speed;
+    angle+=0.025;
+    
+  }
+  void show() {
+    fill((int)((Math.random()*200)+150), (int)((Math.random()*200)+150), (int)((Math.random()*200)+150));
+    ellipse((int)x, (int)y, 80, 30);
+    
+    ellipse((int)x, (int)y-10, 40, 40);
+  }
+}
+/////////////////////////////////////////////
+class oddBallParticle implements Particle {
+  double x, y, speed, angle;
+
+  public oddBallParticle() {
+    x=width/2;
+    y=height/2;
+    speed=Math.random()*5;
+    angle=Math.random()*Math.PI*8;
+  }
+  void move() {
+    x+=Math.cos(angle)*speed;
+    y+=Math.sin(angle)*speed;
+    angle+=0.025;
+    if (x>500) {
+      x=100;
+      speed*=-1;
+    }
+    if (y>500) {
+      y=300;
+      
+      speed*=-1;
+    }
+  }
+  void show() {
+    fill((int)((Math.random()*200)+150), (int)((Math.random()*200)+150), (int)((Math.random()*200)+150));
+    ellipse((int)x, (int)y, 20, 20);
+  }
+}
+//////////////////////////////////////////////////
+ 
+ ```
 This project was by far the hardest for me to understand. I had a hard time understaning how th objects were to be displayed on the screen and the angle in which they moved. I had to partner up with other class mates so they could show me how it worked.
  </br>
 </details>
