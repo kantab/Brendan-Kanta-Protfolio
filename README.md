@@ -101,8 +101,9 @@ This project was desgined to practice using Math.random. The hardest part for th
 </details>
 <details>
 <summary>Dice</summary>
+ 
  ```Java
- Die die1;
+Die die1;
 Die die2;
 Die die3;
 int cou1=0;
