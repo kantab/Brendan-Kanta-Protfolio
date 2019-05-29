@@ -22,7 +22,7 @@ The hardest part was understanding a new launage.
 </details>
 <details>
 <summary>Lightning</summary>
- <br>
+ 
   ```Java
   int startx=150;
   int starty=200;
@@ -94,7 +94,7 @@ void mousePressed()
 
 }
 ```
-</br>
+
 <br>(https://kantab.github.io/lightning2/)
 This project was desgined to practice using Math.random. The hardest part for the project was figuring out the layout of where the lighting starts and ends.
  </br>
