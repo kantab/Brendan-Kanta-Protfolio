@@ -95,12 +95,263 @@ void mousePressed()
 }
 ```
 
-<br>(https://kantab.github.io/lightning2/)
+<br>
 This project was desgined to practice using Math.random. The hardest part for the project was figuring out the layout of where the lighting starts and ends.
  </br>
 </details>
 <details>
 <summary>Dice</summary>
+ ```Java
+ Die die1;
+Die die2;
+Die die3;
+int cou1=0;
+int cou2=0;
+int cou3=0;
+int numClick=0;
+int money=5000;
+int w =60;
+int bwx=0;
+int bwy=0;
+
+void setup()
+{
+  
+  size(600,600);
+  
+  noLoop();
+}
+void draw()
+{
+  background(600,600);
+  fill(255,100,0);
+  rect(50,50,500,500);
+  fill(255,100,200);
+  rect(60,60,480,100);
+  fill(255,100,255);
+  rect(80,200,50,300);
+  fill(255,100,100);
+  rect(150,350,100,100);
+  rect(260,350,100,100);
+  rect(370,350,100,100);
+  textSize(75);
+  fill(0,255,255);
+  text("Big 9 $lot$",100,125);
+  textSize(30);
+  text("Total:",160,335);
+  textSize(20);
+  
+  text("Num Click:",260,335);
+  
+  textSize(25);
+  text("Money $:",380,335);
+  text("$ "+money,370,410);
+  die1 = new Die(200,200);
+     die1.roll();
+     die1.show();
+     if(die1.getNum()==1){
+       cou1++;
+     }
+     if(die1.getNum()==2){
+       cou1+=2;
+     }
+     if(die1.getNum()==3){
+       cou1+=3;
+     }
+     if(die1.getNum()==4){
+       cou1+=4;
+     }
+     if(die1.getNum()==5){
+       cou1+=5;
+     }
+     if(die1.getNum()==6){
+       cou1+=6;
+     }
+  die2 = new Die(300,200);
+     die2.roll();
+     die2.show();
+     if(die2.getNum()==1){
+       cou2++;
+     }
+     if(die2.getNum()==2){
+       cou2+=2;
+     }
+     if(die2.getNum()==3){
+       cou2+=3;
+     }
+     if(die2.getNum()==4){
+       cou2+=4;
+     }
+     if(die2.getNum()==5){
+       cou2+=5;
+     }
+     if(die2.getNum()==6){
+       cou2+=6;
+     }
+  die3 = new Die(400,200);
+     die3.roll();
+     die3.show();
+     if(die3.getNum()==1){
+       cou3++;
+     }
+     if(die3.getNum()==2){
+       cou3+=2;
+     }
+     if(die3.getNum()==3){
+       cou3+=3;
+     }
+     if(die3.getNum()==4){
+       cou3+=4;
+     }
+     if(die3.getNum()==5){
+       cou3+=5;
+     }
+     if(die3.getNum()==6){
+       cou3+=6;
+     }
+     if(cou1+cou2+cou3==9){
+       
+       textSize(50);
+       fill(0,255,0);
+       text("WINNER!",280,500);
+       money+=500;
+       
+     }
+     if(cou1+cou2+cou3!=9){
+       
+      
+       textSize(50);
+       fill(255,0,0);
+       text("LOSER!",280,500);
+       money-=100;
+       
+     }
+     if(cou1!=3&&cou1==cou2 && cou2 == cou3){
+       textSize(75);
+       fill(0,255,0);
+       bwx=100;
+       bwy=100;
+       money+=1000;
+       text("Big WINNER!!",bwx,bwy);
+     }
+     if(cou1==3&&cou2==3&&cou3==3){
+       textSize(75);
+       fill(0,255,0);
+       bwx=100;
+       bwy=100;
+       money+=10000;
+       text("Megga WINNER!!!",bwx,bwy);
+     }
+  textSize(65);
+  text(cou1+cou2+cou3,160,425);
+  
+  if(numClick >= 100){
+    w=45;
+  }
+  textSize(w);
+  text(numClick,270,425);
+  
+  //for(int i=0; i<1200; i+=60){
+   // for(int j=0; j<600; j+=60){
+    //  die = new Die(i,j);
+     // die.roll();
+     // die.show();
+   // }
+ // }
+    //your code here
+  }
+  //your code here
+
+void mousePressed()
+{
+  cou1=0;
+  cou2=0;
+  cou3=0;
+  bwy=0;
+  bwx=0;
+  numClick++;
+  redraw();
+}
+////////////////////////////////////////////////
+ 
+ class Die //models one single dice cube
+{
+  int x;
+  int y;
+  int num;
+  //variable declarations here
+  Die(int x, int y) //constructor
+  {
+    this.x=x;
+    this.y=y;
+    
+    //variable initializations here
+  }
+  void roll()
+  {
+    num= (int)((Math.random()*6)+1);
+    //num=6;
+    //your code here
+  }
+  void show()
+  {
+    rect(x,y,50,50);
+    if(num==1){
+      fill((int)(Math.random()*256)+10,(int)(Math.random()*256)+10,(int)(Math.random()*256)+10);
+      ellipse(x+25,y+25,10,10);
+      
+     }
+     if(num==2){
+      fill((int)(Math.random()*256)+10,(int)(Math.random()*256)+10,(int)(Math.random()*256)+10);
+      ellipse(x+10,y+10,10,10);
+      ellipse(x+40,y+40,10,10);
+      
+     }
+    if(num==3){
+      fill((int)(Math.random()*256)+10,(int)(Math.random()*256)+10,(int)(Math.random()*256)+10);
+      ellipse(x+10,y+10,10,10);
+      ellipse(x+25,y+25,10,10);
+      ellipse(x+40,y+40,10,10);
+      
+      
+     }
+    if(num==4){
+      fill((int)(Math.random()*256)+10,(int)(Math.random()*256)+10,(int)(Math.random()*256)+10);
+     ellipse(x+10,y+10,10,10);
+     ellipse(x+40,y+40,10,10);
+     ellipse(x+10,y+40,10,10);
+     ellipse(x+40,y+10,10,10);
+      
+     }
+    if(num==5){
+      fill((int)(Math.random()*256)+10,(int)(Math.random()*256)+10,(int)(Math.random()*256)+10);
+     ellipse(x+10,y+10,10,10);
+     ellipse(x+25,y+25,10,10);
+     ellipse(x+40,y+40,10,10);
+     ellipse(x+10,y+40,10,10);
+     ellipse(x+40,y+10,10,10);
+      
+     }
+    if(num==6){
+      fill((int)(Math.random()*256)+10,(int)(Math.random()*256)+10,(int)(Math.random()*256)+10);
+     ellipse(x+10,y+10,10,10);
+     ellipse(x+40,y+40,10,10);
+     ellipse(x+10,y+40,10,10);
+     ellipse(x+40,y+10,10,10);
+     ellipse(x+10,y+25,10,10);
+     ellipse(x+40,y+25,10,10);
+      
+     }
+    
+    //your code here
+  
+}
+int getNum(){
+   return num;
+}
+}
+
+ ```
 <br>(https://kantab.github.io/dice3/)
 The project goal was to display dice on the screen and out put their sum. This was my favorite project beacuse I was able to put my own creative spin on it. I displayed the dice as a game where you would win if your sum of 3 dice was 3, or if all 3 numbers were the same.
  </br>
