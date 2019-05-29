@@ -353,7 +353,7 @@ int getNum(){
 }
 
  ```
-<br>(https://kantab.github.io/dice3/)
+<br>
 The project goal was to display dice on the screen and out put their sum. This was my favorite project beacuse I was able to put my own creative spin on it. I displayed the dice as a game where you would win if your sum of 3 dice was 3, or if all 3 numbers were the same.
  </br>
 </details>
