@@ -22,6 +22,79 @@ The hardest part was understanding a new launage.
 </details>
 <details>
 <summary>Lightning</summary>
+ <br>
+  ```Java
+  int startx=150;
+  int starty=200;
+  int endx=50;
+  int endy=150;
+  int cl1=232;
+  int cl2=171;
+  int cl3=18;
+void setup()
+{
+    size(400,280);
+    strokeWeight(5);
+    background(255);
+  
+  
+}
+void draw()
+{
+  background(255);
+  fill(96, 72, 12);
+  stroke(0);
+  rect(75, 200, 75, 5);
+  rect(285, 170, 16, 20);
+  fill(cl1, cl2, cl3);
+  stroke(0);
+  ellipse(295, 224, 90, 75);
+  ellipse(295, 224, 75, 75);
+  ellipse(295, 224, 35, 75);
+  fill(0);
+  stroke(0);
+  triangle(70, 148, 60, 260, 111, 260);
+  fill(8, 84, 34);
+  stroke(0);
+  ellipse(75, 144, 72, 72);
+  fill(0);
+  triangle(70, 38, 50, 120, 101, 120);
+  
+  
+  fill((int)(Math.random()*256)+10,(int)(Math.random()*256)+10,(int)(Math.random()*256)+10);
+  stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
+  
+  while(endx<300){
+    endx=startx+(int)(Math.random()*5);
+    endy=starty+(int)(Math.random()*2);
+    
+    line(startx,starty,endx,endy);
+    startx=endx;
+    starty=endy;
+  }
+ // for(int i=0; i<=300; i++){
+  //startx=0;
+  //starty=150;
+  //endx=50;
+  //endy=150;
+  //}
+  
+}
+void mousePressed()
+{
+  
+  startx=150;
+  starty=200;
+  endx=0;
+  endy=50;
+  cl1=(int)(Math.random()*256);
+  cl2=(int)(Math.random()*256);
+  cl3=(int)(Math.random()*256);
+  
+
+}
+```
+</br>
 <br>(https://kantab.github.io/lightning2/)
 This project was desgined to practice using Math.random. The hardest part for the project was figuring out the layout of where the lighting starts and ends.
  </br>
