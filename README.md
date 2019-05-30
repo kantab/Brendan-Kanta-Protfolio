@@ -912,7 +912,136 @@ class Visual {
 This project was desgined to teach us how to take in data and load it into a map to then be analized. This project was a partner project and it was nice to be able to share ideas and learn how to work with other people in a coding aspect.
  </br>
 </details>
+<details>
+<summary>LinkedList</summary>
+ 
+ ```Java
+ void setup() {
+  ListFunHouse listrun = new ListFunHouse();
+  ListNode test = new ListNode("go", new ListNode("on", new ListNode("at", new ListNode("34", new ListNode("2.1", new ListNode("-a-2-1", new ListNode("up", new ListNode("over", null))))))));
+  out.println("Lab15b Test Code\n\n");  
 
+  out.println("Original list values\n");  
+  out.println("\n");
+
+  out.println("num nodes = " + listrun.nodeCount(test));
+
+  out.println("\nList values after calling nodeCount\n");  
+  listrun.toString(test);
+  out.println();    
+
+  listrun.doubleFirst(test);    
+  out.println("\nList values after calling doubleFirst\n");              
+  listrun.toString(test);
+  out.println();   
+
+  listrun.doubleLast(test);    
+  out.println("\nList values after calling doubleLast\n");              
+  listrun.toString(test);
+  out.println();        
+
+  listrun.removeXthNode(test, 2);    
+  out.println("\nList values after calling removeXthNode(2)\n");          
+  listrun.toString(test);
+  out.println();      
+
+  listrun.setXthNode(test, 2, "one");    
+  out.println("\nList values after calling setXthNode(2,one)\n");                    
+  listrun.toString(test);
+  out.println();    
+
+  listrun.removeXthNode(test, 2);    
+  out.println("\nList values after calling removeXthNode(2)\n");                    
+  listrun.toString(test);
+  out.println();
+}
+///////////////////////////////////////////////////////////////////////////////////
+import static java.lang.System.*;
+import java.util.LinkedList;
+import java.util.ArrayList;
+class ListFunHouse
+{
+   
+  public int nodeCount(ListNode list)
+  {
+    int count=0;
+    while (list!=null) {
+      count++;
+      list= list.getNext();
+    }
+    return count;
+  }
+
+  
+  public void doubleFirst(ListNode list)
+  {
+    list.setNext(new ListNode(list.getValue(), list.getNext()));
+  }
+
+ 
+  public void doubleLast(ListNode list)
+  {
+    ListNode prev=null;
+    while (list!=null &&list.getNext()!=null) {
+      list=list.getNext();
+    }
+    list.setNext(new ListNode(list.getValue(), null));
+  }
+
+ 
+  public void skipEveryOther(ListNode list)
+  {
+    while (list!=null&&list.getNext()!=null) {
+      list.setNext(list.getNext().getNext());
+      list=list.getNext();
+    }
+  }
+
+  
+  public void setXthNode(ListNode list, int x, Comparable value)
+  {
+    int count=1;
+    while (list!=null) {
+      if (x==count) {
+        list.setValue(value);
+      }
+    }
+  }  
+
+ 
+  public void removeXthNode(ListNode list, int x)
+  {  
+    ListNode prev= list;
+    int count=1;
+    if (x==count-1) {
+      prev.setNext(list.getNext().getNext());
+      count=1;
+    } else
+      count++;
+    prev=list;
+    list=list.getNext();
+  }
+  String toString(ListNode list)
+  {
+    while (list!=null) {
+      print(list.getValue()+" ");
+      list=list.getNext();
+    }
+    return "end";
+  }
+}
+
+
+
+
+
+
+ ```
+ 
+  <br>
+This project was desgined to teach us how to use Linked lists in java.
+ </br>
+</details>
 
 ***
 
