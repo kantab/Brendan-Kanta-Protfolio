@@ -715,21 +715,208 @@ class oddBallParticle implements Particle {
  
  ```
  <br>
-This project was by far the hardest for me to understand. I had a hard time understaning how the objects were to be displayed on the screen and the angle in which they moved. I had to partner up with other class mates so they could show me how it worked.
+This project was one of the hardest for me to understand. I had a hard time understaning how the objects were to be displayed on the screen and the angle in which they moved. I had to partner up with other class mates so they could show me how it worked.
  </br>
 </details>
 
 <details>
-<summary>Starfeilds</summary>
+<summary>Maps/Data Project</summary>
+ 
+ ```Java
+ import java.io.File;
+import java.io.IOException;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.ArrayList;
+import java.util.*;
+import static java.lang.System.*;
+ArrayList<Visual> vis = new ArrayList(); // List of all of the different circles
+boolean start = true; // On-off switch for the scrolling
+int time = 1; // Keeps track of frames gone by since run started
+
+void setup() {
+  size(1200, 900);
+  DataHandling run = new DataHandling();
+  ArrayList<String> keys = new ArrayList<String>(); // Keeps track of all keys that are put into the map
+  //vis.add(new Visual("X", "x", "x", "s"));
+  String [] str=loadStrings("C:/Users/Brendan/Desktop/majors.txt"); // NOT SURE WHAT THIS DID
+  String allText=join(str, ","); //NOT SURE WHAT THIS DID
+  try {
+    Scanner scan = new Scanner(new File("C:/Users/Brendan/Desktop/majors.txt"));
+    scan.useDelimiter("/,");
+    while (scan.hasNext()) {
+      run.putData(scan.nextLine(), keys);
+    }
+  } 
+  catch (Exception e) {
+    out.println(e);
+    e.printStackTrace();
+  } 
+  finally {
+    //run.printMap();
+    //out.println(keys);
+  }
+  int spaceOut = 0; //How far out new circles must bve put
+  for (String s : keys) {
+    vis.add(new Visual(s, run.getFirst(s), run.getSecond(s), run.getThird(s), 255, spaceOut + 20 + (parseInt(run.getFirst(s))/500), 400));
+    spaceOut += 20 + (parseInt(run.getFirst(s))/500);
+    out.println(s + " equals " + run.getFirst(s) + " " + run.getSecond(s) + " " + run.getThird(s));
+  }
+  /*for (String key : run.dataList.keySet()){
+   vis.add(new Visual(key, run.getFirst(key), run.getSecond(key), run.getThird(key)));
+   out.println(key + " equals " + run.getFirst(key) + " " + run.getSecond(key) + " " + run.getThird(key));
+   }*/
+}
+
+void draw() {
+  background(0);
+  //time++;
+  if (start == true) {
+    for (int i = 0; i < vis.size(); i++) {
+      vis.get(i).display(0);
+    }
+    out.print(vis.size());
+    out.println(vis.get(1).xpos + " " + vis.get(1).ypos);
+    out.println(vis.get(2).xpos + " " + vis.get(2).ypos);
+    start = false;
+  }
+  for (int i = 0; i < vis.size(); i++) {
+      vis.get(i).display(time);
+      vis.get(i).checkMouse();
+    }
+}
+/////////////////////////////////////
+ class DataHandling {
+  private Map<String, LinkedHashSet<String>> dataList;
+  Iterator<String> search;
+  public DataHandling(){
+    dataList = new TreeMap<String, LinkedHashSet<String>>();
+    //search = dataList.iterator();
+  }
+  
+  void putData (String data, ArrayList al) {
+    String[] dataEntry = data.split(",");
+    String d1 = dataEntry[1];
+    al.add(d1);
+    String d2 = dataEntry[3];
+    String d3 = dataEntry[5];
+    String d4 = dataEntry[7];
+    if (dataList.get(d1) == null){
+      dataList.put(d1, new LinkedHashSet<String>());
+    }
+    dataList.get(d1).add(d2);
+    dataList.get(d1).add(d3);
+    dataList.get(d1).add(d4);
+  }
+  
+  String getFirst(String k){
+    for (String name : dataList.keySet()) {  
+            search = dataList.get(name).iterator();
+            k = search.next();
+          }
+    return k;
+  }
+  
+  String getSecond(String k){
+    for (String name : dataList.keySet()) {  
+            search = dataList.get(name).iterator();
+            search.next();
+            k = search.next();
+          }
+    return k;
+  }
+  
+  String getThird(String k){
+    for (String name : dataList.keySet()) {  
+            search = dataList.get(name).iterator();
+            search.next();
+            search.next();
+            k = search.next();
+          }
+    return k;
+  }
+  
+  void printMap(){
+    out.println(dataList);
+  }
+}
+/////////////////////////////////////////////////////////////////////////////
+class Visual {
+  String name;
+  String grads;
+  String employed;
+  String unemployed;
+  int shade;
+  int xpos;
+  int ypos;
+
+  public Visual(String nam, String grad, String emp, String unemp, int col, int posx, int posy) {
+    name = nam;
+    grads = grad;
+    employed = emp;
+    unemployed = unemp;
+    shade = col;
+    xpos = posx;
+    ypos = posy;
+  }
+
+  void checkMouse() { // Checks to see if the mouse is hovering over this object
+    if (mouseX > xpos - ((parseInt(grads)/500)/2) && mouseX < xpos + ((parseInt(grads)/500)/2) && mouseY > ypos - 200 && mouseY < ypos + 200){
+        out.println(name);   
+        showInfo();
+    }
+  }
+
+
+  void showInfo() { // Shows info of the object that the mouse is hovering over
+    int r = 0;
+    int g = 0;
+    int b = 0;
+    textSize(32);
+    fill(255);
+    rect(0, 75, 1200, 200);
+    
+    if(parseInt(unemployed)>1500){
+      r=232;
+      g=18;
+      b=18;
+    }
+    if(parseInt(unemployed)<=1500 && parseInt(unemployed)>500){
+      r=246;
+      g=246;
+      b=42;
+    }
+    if(parseInt(unemployed)<500){
+      r=42;
+      g=246;
+      b=42;
+    }
+    fill(r,g,b);
+    text("Major: "+name+" \nNumber of Grads: "+grads+" \nNumber of Grads employed: "+employed+" \nNumber of grads unemployed: "+unemployed, 50, 120);
+  }
+
+  void display(int timer) {
+    noStroke();
+    fill(shade);
+    xpos -= timer;
+    ellipse(xpos, ypos, parseInt(grads)/500, parseInt(grads)/500);
+  }
+}
+ 
+ ```
  <br>
-This project was by far the hardest for me to understand. I had a hard time understaning how the objects were to be displayed on the screen and the angle in which they moved. I had to partner up with other class mates so they could show me how it worked.
+This project was desgined to teach us how to take in data and load it into a map to then be analized. This project was a partner project and it was nice to be able to share ideas and learn how to work with other people in a coding aspect.
  </br>
 </details>
 
 
 ***
 
- This is my most worthy peice of code so far. This code is from my JS chemotaxis. I like this code because it was not only a little tricky to figure out how to cycle through the images but I then had to take this code and change it from Java to JavaScript, a launage I was learning at the time. What was tricky about cycling through was the fact when I had a mousePressed method, when I would increase the counter that would in turn change the pictures it would add more then once when the mouse was clicked/ pressed. How i solved this is i created a boolean that would flip if the mouse was pressed and when it wasnt it would be fliped back. This then made it able to only increase by one when the mouse was pressed. 
+ This is one of my most worthy peice of code so far. This code is from my JS chemotaxis. I like this code because it was not only a little tricky to figure out how to cycle through the images but I then had to take this code and change it from Java to JavaScript, a launage I was learning at the time. What was tricky about cycling through was the fact when I had a mousePressed method, when I would increase the counter that would in turn change the pictures it would add more then once when the mouse was clicked/ pressed. How I solved this is I created a boolean that would flip if the mouse was pressed and when it wasnt it would be fliped back. This then made it able to only increase by one when the mouse was pressed. 
 ```Java
  if (!mousePressed) {
     this.ss = true;
