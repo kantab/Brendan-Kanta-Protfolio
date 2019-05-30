@@ -719,6 +719,14 @@ This project was by far the hardest for me to understand. I had a hard time unde
  </br>
 </details>
 
+<details>
+<summary>Starfeilds</summary>
+ <br>
+This project was by far the hardest for me to understand. I had a hard time understaning how the objects were to be displayed on the screen and the angle in which they moved. I had to partner up with other class mates so they could show me how it worked.
+ </br>
+</details>
+
+
 ***
 
  This is my most worthy peice of code so far. This code is from my JS chemotaxis. I like this code because it was not only a little tricky to figure out how to cycle through the images but I then had to take this code and change it from Java to JavaScript, a launage I was learning at the time. What was tricky about cycling through was the fact when I had a mousePressed method, when I would increase the counter that would in turn change the pictures it would add more then once when the mouse was clicked/ pressed. How i solved this is i created a boolean that would flip if the mouse was pressed and when it wasnt it would be fliped back. This then made it able to only increase by one when the mouse was pressed. 
