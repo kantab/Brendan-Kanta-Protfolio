@@ -359,7 +359,232 @@ The project goal was to display dice on the screen and out put their sum. This w
 </details>
 <details>
 <summary>Chemotaxis JS</summary>
-<br>( https://kantab.github.io/chemotaxis4/)
+ 
+ ```Java
+ 'use strict';
+
+var d = new Array();
+var img1;
+var img2;
+var img3;
+var img4;
+var x;
+var y;
+var speedx = 2;
+var speedy = 2;
+var ex = 800 / 2;
+var ey = 600 / 2;
+var sizex = 20;
+var sizey = 20;
+var clic = 0;
+var bounce = 0;
+
+
+function preload() {
+    img3 = loadImage("data/candy.png");
+    img4 = loadImage("data/ghost.png");
+    img1  = loadImage("data/pump.png.png");
+    img2  = loadImage("data/witch.png");
+
+    
+}
+
+function setup() {
+    createCanvas(800, 600);
+    for (var i = 0; i < 4; i++) {
+        d[i] = new Dot(width / 2, height / 2);
+    }
+}
+
+function draw() {
+    background(0, 25, 45);
+    fill(255, 200, 0);
+    textSize(75);
+    text("Happy Holloween", 100, 100);
+    for (var i = 0; i < d.length; i++) {
+        
+        
+    //works
+        d[i].mouseShow();
+        d[i].show();
+        d[i].move();
+        
+        
+       // d[i].gameOver();
+        //d[i].autoMove();
+       // d[i].autoMouse();
+    }
+    //move and show the bacteria   
+}
+
+
+
+class Dot {
+
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        var ss = true;
+        this.clic = 0;
+        this.bounce = 0;
+
+    }
+    move() {
+
+        this.x += (Math.random() * 5) - 2;
+        this.y += (Math.random() * 5) - 2;
+        // Start movement
+        if (mouseIsPressed != true && this.ss == true) {
+
+            if (mouseX > this.x) {
+                this.x += (Math.random() * 7);
+            } else if (mouseX < this.x) {
+                this.x -= (Math.random() * 7);
+            }
+            if (mouseY > this.y) {
+                this.y += (Math.random() * 7);
+            } else if (mouseY < this.y) {
+                this.y -= (Math.random() * 7);
+            }
+        }
+
+
+        if (mouseIsPressed == true && this.ss == true) {
+
+
+            if (mouseX > this.x + 100 && mouseX < this.x + 100 && mouseY > this.y + 100 && mouseY < this.y + 100) {
+
+                if (mouseX > this.x) {
+                    this.x -= (Math.random() * 7);
+                } else if (mouseX < this.x) {
+                    this.x += (Math.random() * 7);
+                }
+                if (mouseY > this.y) {
+                    this.y -= (Math.random() * 7);
+                } else if (mouseY < this.y) {
+                    this.y += (Math.random() * 7);
+                }
+            }
+        }
+        // End of mousePressed
+    }
+
+    show() {
+        fill(255);
+        
+
+        if (this.bounce > 4) {
+            this.clic++;
+            this.bounce = 0;
+
+        }
+
+        if (mouseIsPressed && this.ss) {
+            // if mouse is over button 
+
+            this.clic++;
+
+        }
+        // enable button when mouse is not pressed
+        if (!mouseIsPressed) {
+            this.ss = true;
+        }
+        if (mouseIsPressed) {
+            this.ss = false;
+        }
+
+
+        if (this.clic == 0) {
+            image(img1, this.x, this.y);
+        }
+        if (this.clic == 1) {
+            image(img2, this.x, this.y);
+
+        }
+        if (this.clic == 2) {
+            image(img4, this.x, this.y);
+
+        }
+        if (this.clic > 2) {
+            this.clic = 0;
+
+        }
+    }
+    mouseShow() {
+        image(img3, mouseX, mouseY);
+        //ellipse(mouseX, mouseY, 20, 20);
+    }}
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*gameOver() {
+        if (this.x == this.ex && this.y == this.ey) {
+            this.x = 0;
+            this.y = 0;
+        }
+    }
+    autoMouse() {
+
+        if (keyIsPressed == true) {
+            console.log("hello");
+            if (keyCode == 'a') {
+
+                this.speedx++;
+                this.speedy++;
+            }
+        }
+
+        this.ex += this.speedx;
+        this.ey += this.speedy;
+
+        if (this.speedx * 2 + this.ex >= width - 90) {
+            this.bounce++;
+            this.speedx *= -1;
+        }
+        if (this.speedy * 2 + this.ey >= height - 90) {
+            this.bounce++;
+            this.speedy *= -1;
+        }
+        if (this.speedx * 2 + this.ex <= 0) {
+            this.bounce++;
+            this.speedx *= -1;
+        }
+        if (this.speedy * 2 + this.ey <= 0) {
+            this.bounce++;
+            this.speedy *= -1;
+        }
+        image(img3, ex + this.speedx, this.ey + this.speedy);
+        //rect(ex+speedx, ey+speedy, sizex, sizey);
+    }
+    autoMove() {
+        this.x += (Math.random() * 5) - 2;
+        this.y += (Math.random() * 5) - 2;
+
+        if (this.ex > this.x) {
+            this.x += (Math.random() * 3);
+        } else if (this.ex < this.x) {
+            this.x -= (Math.random() * 3);
+        }
+        if (this.ey > this.y) {
+            this.y += (Math.random() * 3);
+        } else if (this.ey < this.y) {
+            this.y -= (Math.random() * 3);
+        }
+    }
+}
+*/
+     
+ ```
+<br>
 The project was desgined to learn a bit more with arrylist. The hardest part of this project was once I was complete I converted the code into JavaScript. This was the first time I had worked with JavaScript. 
  </br>
 </details>
