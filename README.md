@@ -1074,6 +1074,7 @@ void setup() {
 These labs were desgined to teach us more about how to use and code up stacks and queues in Java.
  </br>
 </details>
+
 ***
 
  This is one of my most worthy peice of code so far. This code is from my JS chemotaxis. I like this code because it was not only a little tricky to figure out how to cycle through the images but I then had to take this code and change it from Java to JavaScript, a launage I was learning at the time. What was tricky about cycling through was the fact when I had a mousePressed method, when I would increase the counter that would in turn change the pictures it would add more then once when the mouse was clicked/ pressed. How I solved this is I created a boolean that would flip if the mouse was pressed and when it wasnt it would be fliped back. This then made it able to only increase by one when the mouse was pressed. 
@@ -1104,6 +1105,47 @@ These labs were desgined to teach us more about how to use and code up stacks an
     
 
 ```
+
+***
+	This is another worthy peice of code from this year. This code is from my data project. In the code was where you loaded in the data and then had to use a Delimiter to format it how it needed to be for the porgram to take it in and run it properly. It then called all of our funticons to be able to print them out. All of this stuff was relatilivy know me me and it was denfently good to be able to work with a partner to ease the work load. You can also see in the comments all of the difrent thing that we were trying to work through. I like to leave those in there to either come back to them or to remind me what doesnt work so I do not try them again. 
+	```Java
+	void setup() {
+  size(1200, 900);
+  DataHandling run = new DataHandling();
+  ArrayList<String> keys = new ArrayList<String>(); // Keeps track of all keys that are put into the map
+  //vis.add(new Visual("X", "x", "x", "s"));
+  String [] str=loadStrings("C:/Users/Brendan/Desktop/majors.txt"); // NOT SURE WHAT THIS DID
+  String allText=join(str, ","); //NOT SURE WHAT THIS DID
+  try {
+    Scanner scan = new Scanner(new File("C:/Users/Brendan/Desktop/majors.txt"));
+    scan.useDelimiter("/,");
+    while (scan.hasNext()) {
+      run.putData(scan.nextLine(), keys);
+    }
+  } 
+  catch (Exception e) {
+    out.println(e);
+    e.printStackTrace();
+  } 
+  finally {
+    //run.printMap();
+    //out.println(keys);
+  }
+  int spaceOut = 0; //How far out new circles must bve put
+  for (String s : keys) {
+    vis.add(new Visual(s, run.getFirst(s), run.getSecond(s), run.getThird(s), 255, spaceOut + 20 + (parseInt(run.getFirst(s))/500), 400));
+    spaceOut += 20 + (parseInt(run.getFirst(s))/500);
+    out.println(s + " equals " + run.getFirst(s) + " " + run.getSecond(s) + " " + run.getThird(s));
+  }
+  /*for (String key : run.dataList.keySet()){
+   vis.add(new Visual(key, run.getFirst(key), run.getSecond(key), run.getThird(key)));
+   out.println(key + " equals " + run.getFirst(key) + " " + run.getSecond(key) + " " + run.getThird(key));
+   }*/
+}
+
+	
+	
+	```
 # C++ Portfolio
 
 <details>
