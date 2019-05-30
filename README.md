@@ -1032,17 +1032,48 @@ class ListFunHouse
 }
 
 
-
-
-
-
  ```
  
   <br>
 This project was desgined to teach us how to use Linked lists in java.
  </br>
 </details>
-
+<details>
+<summary>Stacks and Queue labs</summary>
+ 
+ ```Java
+ import java.util.Stack;
+import java.util.Scanner;
+import static java.lang.System.*;
+Stack<String>circus=new Stack<String>();
+int count = 0;
+void setup() {
+  try{
+    Scanner scan = new Scanner(new File("C:/Users/Brendan/Desktop/circus.txt"));
+    int num=scan.nextInt();
+    for(int i = 0; i<num; i++){
+     String name=scan.next();
+     if(count%2==0){
+      println(name); 
+     }else{
+      circus.push(name); 
+     }
+     count++;
+    }
+    while(!circus.isEmpty()){
+      println(circus.pop());
+    }
+  }
+  catch(Exception e){
+    println(e);
+  }
+}
+ 
+ ```
+  <br>
+These labs were desgined to teach us more about how to use and code up stacks and queues in Java.
+ </br>
+</details>
 ***
 
  This is one of my most worthy peice of code so far. This code is from my JS chemotaxis. I like this code because it was not only a little tricky to figure out how to cycle through the images but I then had to take this code and change it from Java to JavaScript, a launage I was learning at the time. What was tricky about cycling through was the fact when I had a mousePressed method, when I would increase the counter that would in turn change the pictures it would add more then once when the mouse was clicked/ pressed. How I solved this is I created a boolean that would flip if the mouse was pressed and when it wasnt it would be fliped back. This then made it able to only increase by one when the mouse was pressed. 
@@ -1077,7 +1108,310 @@ This project was desgined to teach us how to use Linked lists in java.
 
 <details>
 <summary>Payroll</summary> 
-<br>(https://kantab.github.io/testWeb/)
+ 
+ ```cpp
+ #include <iostream>
+#include <string>
+#include <array>
+#ifndef Inter_HEADER //stackoverflow do not know what it does but fixed an isue I was having
+#define Inter_HEADER
+
+using namespace std;
+
+class Inter {
+public:
+	Inter() {}
+	~Inter() {}
+	void setState(double stTax);
+	void setFedral(double fdTax);
+	void setLocal(double lcTax);
+	double stateTaxRate();
+	double fedralTaxRate();
+	double localTaxRate();
+	//double totalTaxRate();
+	double totalTaxAmount();
+	double payWithTax();
+	double getGross();
+	void newEmp(double yearPay);
+	void newEmp(double hoursWorked, double pay1);
+	void newEmp(double hoursWorked, double pay1, int con);
+
+
+
+
+
+};
+#endif
+////////////////////////////////////////////////////
+#include <iostream>
+#include<iomanip>
+#include <string>
+//#include "payRoll62.cpp"
+#include "inter.h"
+using namespace std;
+	int main() {
+		cout << fixed << setprecision(2);
+		char inp;
+		double hoursWorked;
+		double *hr = &hoursWorked;
+		double yearPay;
+		double pay1;
+		double staTax = 0;
+		double *st = &staTax;
+		double fdrTax = 0;
+		double *ft = &fdrTax;
+		double lclTax = 0;
+		double *lt = &lclTax;
+		int con;
+		int cou = 0;
+		bool loo = false;
+		bool isCon = false;
+		string firstNm = "";
+		string middleNm = "";
+		string lastNm = "";
+
+
+
+		Inter pay;
+		while (true) {
+			if (cou < 1) {
+				cout << "Enter State tax rates in decimals:" << endl;
+				cin >> staTax;
+				pay.setState(*st);
+				cout << "Enter Fedral tax rates in decimals:" << endl;
+				cin >> fdrTax;
+				pay.setFedral(*ft);
+				cout << "Enter Local tax rates in decimals:" << endl;
+				cin >> lclTax;
+				pay.setLocal(*lt);
+				cou++;
+			}
+
+			cout << "Please type s for a salarly employee" << endl;
+			cout << "Please type h for a hourly paid employee" << endl;
+			cout << "Please type c for a hourly contract employee" << endl;
+			cout << "Enter any other key to stop" << endl;
+			cin >> inp;
+
+			switch (inp)
+			{
+			case 's':
+				loo = false;
+				cout << "Enter employee First, Middle, and then Last name:" << endl;
+				cin >> firstNm;
+				cin >> middleNm;
+				cin >> lastNm;
+				cout << "Enter yearly pay:" << endl;
+				cin >> yearPay;
+				pay.newEmp(yearPay);
+				break;
+			case 'h':
+				loo = true;
+				cout << "Enter employee First, Middle, and then Last name:" << endl;
+				cin >> firstNm;
+				cin >> middleNm;
+				cin >> lastNm;
+				cout << "Enter hourly pay:" << endl;
+				cin >> pay1;
+				
+				while (true) {
+					cout << "Enter employees hours worked:" << endl;
+					cin >> *hr;
+					try {
+						if (*hr > 55) {
+							throw 404;
+						}
+						else {
+							break;
+						}
+					}
+					catch (int tc) {
+						if (tc == 404) {
+							cout << " invalid input:" << endl;
+							
+						}
+						else {
+							break;
+						}
+					}
+					/*if (hoursWorked > 45) {
+						cout << " invalid input:" << endl;
+						//cin >> hoursWorked;
+					}
+					else {
+						break;
+					}*/
+				}
+					pay.newEmp(hoursWorked, pay1);
+					break;
+			case 'c':
+				isCon = true;
+				loo = true;
+				cout << "Enter employee First, Middle, and then Last name:" << endl;
+				cin >> firstNm;
+				cin >> middleNm;
+				cin >> lastNm;
+				cout << "Enter hourly pay:" << endl;
+				cin >> pay1;
+				cout << "Enter contract number:" << endl;
+				cin >> con;
+				while (true) {
+					cout << "Enter employees hours worked:" << endl;
+					cin >> *hr;
+					try {
+						if (*hr > 45) {
+							throw 404;
+						}
+						else {
+							break;
+						}
+					}
+					catch (int tc) {
+						if (tc == 404) {
+							cout << " invalid input:" << endl;
+
+						}
+						else {
+							break;
+						}
+					}
+				}
+				pay.newEmp(hoursWorked, pay1, con);
+				break;
+			default:
+				cout << "No more employees" << endl;
+				return 0;
+			}
+			if (isCon != true) {
+				cout << "Employee: " << endl;
+				cout << lastNm << ", " << firstNm << ", " << middleNm.at(0) << endl;
+				cout << "Gross weekly pay for this employee is:" << endl;
+				cout << pay.getGross() << endl;
+				cout << "State Tax for this employee is:" << endl;
+				cout << pay.stateTaxRate() << endl;
+				cout << "Fedral Tax for this employee is:" << endl;
+				cout << pay.fedralTaxRate() << endl;
+				cout << "Local Tax for this employee is:" << endl;
+				cout << pay.localTaxRate() << endl;
+				cout << "Weekly net pay:" << endl;
+				cout << pay.payWithTax() << endl;
+			}
+			else {
+				isCon = false;
+				cout << "Employee: " << endl;
+				cout << lastNm << ", " << firstNm << ", " << middleNm.at(0) << endl;
+				cout << "Gross weekly pay for this employee is:" << endl;
+				cout << pay.getGross() << endl;
+			} 
+			}
+
+		return 0;
+
+	};
+		
+	///////////////////////////////////////////////////////////
+ #include <iostream>
+#include<iomanip>
+#include <string>
+#include "inter.h"
+using namespace std;
+double halfPay = 0;
+double doublePay = 0;
+double hoursOver = 0;
+double hoursIn = 0;
+double grs = 0;
+double stateTax = 0;
+double fedralTax = 0;
+double localTax = 0;
+const int WKS_IN_YR = 52;
+
+
+	void Inter :: setState(double stTax) {
+		if (stTax != 0) {
+			stateTax = stTax;
+		}
+		else {
+			stateTax = 0.05;
+		}
+
+	}
+	void Inter :: setFedral(double fdTax) {
+		if (fdTax != 0) {
+			fedralTax = fdTax;
+		}
+		else {
+			fedralTax = 0.10;
+		}
+	}
+	void Inter::setLocal(double lcTax) {
+		if (lcTax != 0) {
+			localTax = lcTax;
+		}
+		else {
+			localTax = 0.03;
+		}
+
+	}
+	double Inter::stateTaxRate() {
+		return grs * stateTax;
+	}
+	double Inter::fedralTaxRate() {
+		return grs * fedralTax;
+
+	}
+	double Inter::localTaxRate() {
+		return grs * localTax;
+
+	}
+	double Inter::totalTaxAmount() {
+		return stateTaxRate() + fedralTaxRate() + localTaxRate();
+	}
+	double Inter::payWithTax() {
+		return grs - totalTaxAmount();
+	}
+
+	void Inter::newEmp(double yearPay) { //sal employee
+		grs = 0;
+		grs = yearPay / WKS_IN_YR;
+
+	}
+	void Inter::newEmp(double hoursWorked, double pay1) { // hourly employee 
+
+		halfPay = pay1 / 2 + pay1;
+		doublePay = pay1 * 2;
+
+		if (hoursWorked < 41) {
+			grs = pay1 * hoursWorked;
+		}
+		else if (hoursWorked > 40 && hoursWorked < 50) {
+			hoursIn = hoursWorked - 40;
+			grs = pay1 * 40;
+			grs += hoursIn * halfPay;
+		}
+		else if (hoursWorked >= 50) {
+			hoursOver = hoursWorked - 50;
+			grs = pay1 * 40;
+			grs += 10 * halfPay;
+			grs += hoursOver * halfPay;
+		}
+
+
+		grs = 0;
+		grs = pay1 * hoursWorked;
+
+	}
+	void Inter::newEmp(double hoursWorked, double pay1, int con) { // contract employee
+		con = 1;
+		grs = 0;
+		grs = pay1 * hoursWorked;
+	}
+
+	double Inter::getGross() {
+		return grs;
+	}
+	
+ ```
+<br>
 This project was one that I worked on in my introduction to C++ class I took at Inver Hills Community College. This project was desgined to teach us how to use things such as setprecision, switchs, try/ catch statements, interfaces, user inputs, and a lot of the key foundations to help learn and understand C++. We made a few difernt variations of this project and this is the final one.
  </br>
 </details>
