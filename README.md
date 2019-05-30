@@ -1084,6 +1084,7 @@ These labs were desgined to teach us more about how to use and code up stacks an
 This was the final project that we worked on for this class. I worked on it with a partner Max. It is a madlib of sorts and it asks you questions then genrates a story.
  </br>
 </details>
+
 ***
 
  This is one of my most worthy peice of code so far. This code is from my JS chemotaxis. I like this code because it was not only a little tricky to figure out how to cycle through the images but I then had to take this code and change it from Java to JavaScript, a launage I was learning at the time. What was tricky about cycling through was the fact when I had a mousePressed method, when I would increase the counter that would in turn change the pictures it would add more then once when the mouse was clicked/ pressed. How I solved this is I created a boolean that would flip if the mouse was pressed and when it wasnt it would be fliped back. This then made it able to only increase by one when the mouse was pressed. 
