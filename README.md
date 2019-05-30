@@ -1119,8 +1119,8 @@ These labs were desgined to teach us more about how to use and code up stacks an
   DataHandling run = new DataHandling();
   ArrayList<String> keys = new ArrayList<String>(); // Keeps track of all keys that are put into the map
   //vis.add(new Visual("X", "x", "x", "s"));
-  String [] str=loadStrings("C:/Users/Brendan/Desktop/majors.txt"); // NOT SURE WHAT THIS DID
-  String allText=join(str, ","); //NOT SURE WHAT THIS DID
+  String [] str=loadStrings("C:/Users/Brendan/Desktop/majors.txt"); 
+  String allText=join(str, ","); 
   try {
     Scanner scan = new Scanner(new File("C:/Users/Brendan/Desktop/majors.txt"));
     scan.useDelimiter("/,");
