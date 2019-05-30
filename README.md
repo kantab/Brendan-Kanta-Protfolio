@@ -1107,8 +1107,10 @@ These labs were desgined to teach us more about how to use and code up stacks an
 ```
 
 ***
+
 	This is another worthy peice of code from this year. This code is from my data project. In the code was where you loaded in the data and then had to use a Delimiter to format it how it needed to be for the porgram to take it in and run it properly. It then called all of our funticons to be able to print them out. All of this stuff was relatilivy know me me and it was denfently good to be able to work with a partner to ease the work load. You can also see in the comments all of the difrent thing that we were trying to work through. I like to leave those in there to either come back to them or to remind me what doesnt work so I do not try them again. 
-	```Java
+	
+```Java
 	void setup() {
   size(1200, 900);
   DataHandling run = new DataHandling();
@@ -1143,9 +1145,8 @@ These labs were desgined to teach us more about how to use and code up stacks an
    }*/
 }
 
+```
 	
-	
-	```
 # C++ Portfolio
 
 <details>
