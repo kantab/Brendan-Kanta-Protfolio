@@ -1416,4 +1416,284 @@ This project was one that I worked on in my introduction to C++ class I took at 
  </br>
 </details>
 
+<details>
+<summary>Payroll with creating .txt, and .csv files</summary> 
+
+```cpp
+#include <iostream>
+#include <regex>
+#include <string>
+#include <fstream>
+#include<cstdlib>
+using namespace std;
+
+int main() {
+	string fileNm;
+	cout << "Enter a name for the file without the extention, the file created will be .txt" << endl;
+	cin >> fileNm;
+	ofstream outClientFile{ fileNm + ".txt", ios::out };
+
+	if (!outClientFile) {
+		cerr << "File could not be opened" << endl;
+		exit(EXIT_FAILURE);
+	}
+	cout << "You will be prompted to enter the Employee Department ID, Employee Number, First Name, Last Name, \nEmail Address, Number of hours worked, and Pay rate, but first\n"
+		<< "\nType \"start\" then press enter\n\n Then your inputs one after the other (type input press enter, type input press eter, ect.)\n\n Type end-of-file to end input.\n\n";
+	string empDepID;
+	string empNum;
+	regex integer("(\\+|-)?[[:digit:]]+");
+	regex emailReg("^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+	string nameFst;
+	string nameLst;
+	string email;
+	regex floatin("[-+]?[0-9]*\.?[0-9]+");
+	string hrsWrk;
+	string payRt;
+	string start;
+
+	cin >> start;
+
+
+	if (start == "end-of-file") {
+		return 0;
+	}
+	while (true) {
+		cout << "Enter the employee department ID number: ";
+		cin >> empDepID;
+		
+			if (empDepID == "end-of-file") {
+				return 0;
+			}
+			while (true) {
+			if (regex_match(empDepID, integer)) {
+				break;
+			}
+			if (empDepID == "end-of-file") {
+				return 0;
+			}
+			else {
+				cout << "invalid input enter a Employee Department Number that meets the requirments:\n The Employee Department ID Number must be a whole number (such as 12345)\n Enter end-of-file to end input." << endl;
+				cin >> empDepID;
+			}
+		}
+		cout << "Enter the employee number: ";
+		cin >> empNum;
+		while (true) {
+			if (empNum == "end-of-file") {
+				return 0;
+			}
+			if (regex_match(empNum, integer)) {
+				break;
+			}
+			if (empNum == "end-of-file") {
+				return 0;
+			}
+			else {
+				cout << " invalid input enter a Employee Number that meets the requirments:\n The Employee Number must be a whole number (such as 12345)\n Enter end-of-file to end input." << endl;
+				cin >> empNum;
+			}
+		}
+		cout << "Enter the employee First name: ";
+		cin >> nameFst;
+		while (true) {
+			if (nameFst == "end-of-file") {
+				return 0;
+			}
+			if (nameFst.size() < 20) {
+				break;
+			}
+			if (nameFst == "end-of-file") {
+				return 0;
+			}
+			else {
+				cout << " invalid input enter a First Name that meets the requirments:\n The Last Name must be less the 20 charters\n Enter end-of-file to end input." << endl;
+				cin >> nameFst;
+			}
+		}
+		cout << "Enter the employee Last name: ";
+		cin >> nameLst;
+		while (true) {
+			if (nameLst == "end-of-file") {
+				return 0;
+			}
+			if (nameLst.size() < 20) {
+				break;
+			}
+			if (nameLst == "end-of-file") {
+				return 0;
+			}
+			else {
+				cout << " invalid input enter a Last Name that meets the requirments:\n The Last Name must be less the 20 charters\n Enter end-of-file to end input." << endl;
+				cin >> nameLst;
+			}
+		}
+		cout << "Enter the employee email: ";
+		cin >> email;
+		while (true) {
+			if (email == "end-of-file") {
+				return 0;
+			}
+			if (regex_match(email, emailReg)) {
+				break;
+			}
+			if (email == "end-of-file") {
+				return 0;
+			}
+			else {
+				cout << " invalid input enter a email that meets the requirments:\n Enter end-of-file to end input." << endl;
+				cin >> email;
+			}
+		}
+		cout << "Enter the employee number of hours worked: ";
+		cin >> hrsWrk;
+		while (true) {
+			if (hrsWrk == "end-of-file") {
+				return 0;
+			}
+			if (regex_match(hrsWrk, floatin)) {
+				break;
+			}
+			if (hrsWrk == "end-of-file") {
+				return 0;
+			}
+			else {
+				cout << " invalid input enter a valid number for hours worked:\n The hours worked must be a floating point of (such as 55 or 55.55)\n Enter end-of-file to end input." << endl;
+				cin >> hrsWrk;
+			}
+		}
+		cout << "Enter the employee pay rate: ";
+		cin >> payRt;
+		while (true) {
+			if (payRt == "end-of-file") {
+				return 0;
+			}
+			if (regex_match(payRt, floatin)) {
+				break;
+			}
+			if (payRt == "end-of-file") {
+				return 0;
+			}
+			else {
+				cout << " invalid input enter a Pay Rate that meets the requirments:\n The Pay Rate must be a floating point of (such as 55 or 55.55)\n Enter end-of-file to end input." << endl;
+				cin >> payRt;
+			}
+		}
+
+		outClientFile << empDepID << ' ' << empNum << ' ' << nameFst << ' ' << nameLst << ' ' << email << ' ' << hrsWrk << ' ' << payRt << endl;
+		cout << "?Start entering new employee data now or \"end-of-file\" to end program\n";
+
+	}
+
+
+}
+///////////////////////////////////////////////////////
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+#include <iomanip>
+#include "readh.h"
+using namespace std;
+int main() {
+	double hrsWrk;
+	double payRt;
+	int num;
+	string nameFst;
+	string nameLst;
+	string email;
+	string fileNm;
+	char type;
+	payroll emp;
+
+
+	cout << "enter the name of the file you wish to open, note you do not need to add .txt to the name" << endl;
+	cin >> fileNm;
+
+	ifstream inClientFile(fileNm+".txt", ios::in);
+
+	if (!inClientFile) {
+		cerr << "File could not be opened" << endl;
+		exit(EXIT_FAILURE);
+	}
+
+	ofstream outClientFile(fileNm + ".csv", ios::out);
+
+	if (!outClientFile) {
+		cerr << "File could not be opened" << endl;
+		exit(EXIT_FAILURE);
+	}
+	while (inClientFile >> email >> nameFst >> nameLst >> hrsWrk >> payRt >> num) {
+		emp.newEmp(hrsWrk, payRt);
+		outClientFile << num << "," << nameLst << "," << nameFst.at(0) << "," << email << "," << emp.getHrs() << "," << emp.getOverTm() << "," << payRt << "," << emp.getGrs() << " Record" << endl;
+
+		cout << right << "\nEmployee Number" << setw(40) << num << "\nEmployee name" << setw(40) << nameLst << "," << nameFst.at(0) << "\nEmployee email" << setw(40) << email << "\nEmployees normal hours worked" << setw(40) << emp.getHrs() << "\nEmployees overtime hours worked" << setw(40) << emp.getOverTm() << "\nEmployees pay rate" << setw(40) << "$" << payRt << "\nEmployees gross pay" << setw(40) << "$" << emp.getGrs() << endl;
+		break;
+	}
+	return 0;
+}
+
+
+/////////////////////////////////////////////////////////////
+
+#include <string>
+#include <iostream>
+using namespace std;
+class payroll {
+public:
+	void newEmp(double hrsWrk, double payRt) {
+		halfPay = payRt / 2 + payRt;
+
+
+		if (hrsWrk < 41) {
+			hours = hrsWrk;
+			grs = payRt * hrsWrk;
+		}
+		else if (hrsWrk > 40) {
+			hoursIn = hrsWrk - 40;
+			grs = payRt * 40;
+			grs += hoursIn * halfPay;
+			overTm = hrsWrk - 40;
+		}
+
+
+
+		grs = 0;
+		grs = payRt * hrsWrk;
+
+	}
+	double getGrs() {
+
+		return grs;
+
+	}
+	double getHrs() {
+
+		return hours;
+
+	}
+	double getOverTm() {
+
+		return overTm;
+
+	}
+
+private:
+
+	double halfPay = 0;
+	double hoursOver = 0;
+	double hoursIn = 0;
+	double grs = 0;
+	double hours;
+	double overTm;
+	double payRt;
+
+};
+//////////////////////////////////////////////
+
+```
+<br>
+This project was the Final we had for the class. The goal of the project was to be able to create a .txt file in one program that would take in user inputs and use Regual Expressions and other methods to make sure what the user had enter follows the guide lines for the project. We then had to in a seprate porgram take that .txt file in and use some of the inputs from it to create a .csv file that did some payroll calculations.
+</br>
+</details>
+
 
