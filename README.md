@@ -7,7 +7,7 @@
 
 # Brendan-Kanta-Protfolio
 
-> This portfolio will showcase the projects that I have worked on.
+> This portfolio will showcase the projects that I have worked on. You can reach me by Email (brendan.k29@gmail.com) or on LinkedIn (Brendan Kanta)
 
 
 # Java Portfolio
@@ -1119,7 +1119,7 @@ This was the final project that we worked on for this class. I worked on it with
 ***
 
 <br>
-	This is another worthy peice of code from this year. This code is from my data project. In the code was where you loaded in the data and then had to use a Delimiter to format it how it needed to be for the porgram to take it in and run it properly. It then called all of our funticons to be able to print them out. All of this stuff was relatilivy know me me and it was denfently good to be able to work with a partner to ease the work load. You can also see in the comments all of the difrent thing that we were trying to work through. I like to leave those in there to either come back to them or to remind me what doesnt work so I do not try them again. 
+	This is another worthy peice of code. This code is from my data project. In the code was where you loaded in the data and then had to use a Delimiter to format it how it needed to be for the porgram to take it in and run it properly. It then called all of our funticons to be able to print them out. All of this stuff was relatilivy know me me and it was denfently good to be able to work with a partner to ease the work load. You can also see in the comments all of the difrent thing that we were trying to work through. I like to leave those in there to either come back to them or to remind me what doesnt work so I do not try them again. 
 	
 </br>
 
