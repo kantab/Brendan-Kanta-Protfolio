@@ -10,7 +10,7 @@
 > This portfolio will showcase the projects that I have worked on. You can reach me by Email (brendan.k29@gmail.com) or on LinkedIn (Brendan Kanta)
 
 
-# Java Portfolio
+# Java 
 
 
 <details>
@@ -1160,7 +1160,7 @@ This was the final project that we worked on for this class. I worked on it with
 
 ```
 	
-# C++ Portfolio
+# C++ 
 
 <details>
 <summary>Payroll</summary> 
