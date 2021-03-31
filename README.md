@@ -12,10 +12,9 @@
 # Resume
 
 <details>
-<summary>WebPage</summary> 
+<summary>My Resume</summary> 
 <br>(https://kantab.github.io/testWeb/)
-This project was desgined to give an introduction to HTML and JS. This was the first web page I made. 
-The hardest part was understanding a new launage.
+This is a copy of my resume if you wish to download it.
  </br>
 </details>
 
