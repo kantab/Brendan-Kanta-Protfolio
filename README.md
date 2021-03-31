@@ -14,7 +14,7 @@
 <details>
 <summary>My Resume</summary> 
 <br>
-<p><a href="">My Resume</a>.</p>
+<p><a href="https://github.com/kantab/Brendan-Kanta-Protfolio/blob/master/Brendan%20Kanta%20Resume%20MR%20.pdf">My Resume</a>.</p>
 This is a copy of my resume if you wish to download it.
  </br>
 </details>
