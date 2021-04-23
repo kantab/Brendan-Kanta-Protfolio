@@ -7,7 +7,7 @@
 
 # Brendan-Kanta-Protfolio
 
-> This portfolio will showcase the projects that I have worked on. You can reach me by Email (brendan.k29@gmail.com) or on LinkedIn (Brendan Kanta)
+> This portfolio will showcase the projects that I have worked on. You can reach me by Email (brendan.k29@gmail.com) or on LinkedIn (www.linkedin.com/in/brendan-kanta)
 
 # Resume
 
