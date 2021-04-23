@@ -25,7 +25,7 @@ This is a copy of my resume if you wish to download it.
 <details>
 <summary>WebPage</summary> 
 <br>(https://kantab.github.io/testWeb/)
-This project was desgined to give an introduction to HTML and JS. This was the first web page I made. 
+This project was designed to give an introduction to HTML and JS. This was the first web page I made. 
 The hardest part was understanding a new launage.
  </br>
 </details>
@@ -105,7 +105,7 @@ void mousePressed()
 ```
 
 <br>
-This project was desgined to practice using Math.random. The hardest part for the project was figuring out the layout of where the lighting starts and ends.
+This project was designed to practice using Math.random. The hardest part for the project was figuring out the layout of where the lighting starts and ends.
  </br>
 </details>
 <details>
@@ -363,7 +363,7 @@ int getNum(){
 
  ```
 <br>
-The project goal was to display dice on the screen and out put their sum. This was my favorite project beacuse I was able to put my own creative spin on it. I displayed the dice as a game where you would win if your sum of 3 dice was 3, or if all 3 numbers were the same.
+The project goal was to display dice on the screen and out put their sum. This was my favorite project because I was able to put my own creative spin on it. I display the dice as a game where you would win if your sum of 3 dice was 3, or if all 3 numbers were the same.
  </br>
 </details>
 <details>
@@ -594,7 +594,7 @@ class Dot {
      
  ```
 <br>
-The project was desgined to learn a bit more with arrylist. The hardest part of this project was once I was complete I converted the code into JavaScript. This was the first time I had worked with JavaScript. 
+The project was designed to learn a bit more with arraylist. The hardest part of this project was once I was complete I converted the code into JavaScript. This was the first time I had worked with JavaScript.
  </br>
 </details>
 <details>
@@ -724,7 +724,7 @@ class oddBallParticle implements Particle {
  
  ```
  <br>
-This project was one of the hardest for me to understand. I had a hard time understaning how the objects were to be displayed on the screen and the angle in which they moved. I had to partner up with other class mates so they could show me how it worked.
+This project was one of the hardest for me to understand. I had a hard time understanding how the objects were to be displayed on the screen and the angle in which they moved. I had to partner up with other class mates so they could show me how it worked.
  </br>
 </details>
 
@@ -918,7 +918,7 @@ class Visual {
  
  ```
  <br>
-This project was desgined to teach us how to take in data and load it into a map to then be analized. This project was a partner project and it was nice to be able to share ideas and learn how to work with other people in a coding aspect.
+This project was designed to teach us how to take in data and load it into a map to then be analyzed. This project was a partner project and it was nice to be able to share ideas and learn how to work with other people in a coding aspect.
  </br>
 </details>
 <details>
@@ -1090,13 +1090,13 @@ These labs were desgined to teach us more about how to use and code up stacks an
 
 
  <br>(https://github.com/kantab/storyFinalPro)
-This was the final project that we worked on for this class. I worked on it with a partner Max. It is a madlib of sorts and it asks you questions then genrates a story.
+This was the final project that we worked on for this class. I worked on it with a partner Max. It is a madlib of sorts and it asks you questions then generates a story.
  </br>
 </details>
 
 ***
 
- This is one of my most worthy peice of code so far. This code is from my JS chemotaxis. I like this code because it was not only a little tricky to figure out how to cycle through the images but I then had to take this code and change it from Java to JavaScript, a launage I was learning at the time. What was tricky about cycling through was the fact when I had a mousePressed method, when I would increase the counter that would in turn change the pictures it would add more then once when the mouse was clicked/ pressed. How I solved this is I created a boolean that would flip if the mouse was pressed and when it wasnt it would be fliped back. This then made it able to only increase by one when the mouse was pressed. 
+ This is one of my most worthy peice of code so far. This code is from my JS chemotaxis. I like this code because it was not only a little tricky to figure out how to cycle through the images but I then had to take this code and change it from Java to JavaScript, a language I was learning at the time. What was tricky about cycling through was the fact when I had a mousePressed method, when I would increase the counter that would in turn change the pictures it would add more then once when the mouse was clicked/ pressed. How I solved this is I created a boolean that would flip if the mouse was pressed and when it wasnt it would be flipped back. This then made it able to only increase by one when the mouse was pressed.
 ```Java
  if (!mousePressed) {
     this.ss = true;
@@ -1128,7 +1128,7 @@ This was the final project that we worked on for this class. I worked on it with
 ***
 
 <br>
-	This is another worthy peice of code. This code is from my data project. In the code was where you loaded in the data and then had to use a Delimiter to format it how it needed to be for the porgram to take it in and run it properly. It then called all of our funticons to be able to print them out. All of this stuff was relatilivy know me me and it was denfently good to be able to work with a partner to ease the work load. You can also see in the comments all of the difrent thing that we were trying to work through. I like to leave those in there to either come back to them or to remind me what doesnt work so I do not try them again. 
+	This is another worthy peice of code. This code is from my data project. In the code was where you loaded in the data and then had to use a Delimiter to format it how it needed to be for the porgram to take it in and run it properly. It then called all of our funticons to be able to print them out. All of this stuff was relatively know me me and it was definitely good to be able to work with a partner to ease the work load. You can also see in the comments all of the difrent thing that we were trying to work through. I like to leave those in there to either come back to them or to remind me what doesnt work so I do not try them again.
 	
 </br>
 
@@ -1477,7 +1477,7 @@ const int WKS_IN_YR = 52;
 	
  ```
 <br>
-This project was one that I worked on in my introduction to C++ class I took at Inver Hills Community College. This project was desgined to teach us how to use things such as setprecision, switchs, try/ catch statements, interfaces, user inputs, and a lot of the key foundations to help learn and understand C++. We made a few difernt variations of this project and this is the final one.
+This project was one that I worked on in my introduction to C++ class I took at Inver Hills Community College. This project was designed to teach us how to use things such as setprecision, switchs, try/ catch statements, interfaces, user inputs, and a lot of the key foundations to help learn and understand C++. We made a few different variations of this project and this is the final one.
  </br>
 </details>
 
@@ -1757,7 +1757,7 @@ private:
 
 ```
 <br>
-This project was the Final we had for the class. The goal of the project was to be able to create a .txt file in one program that would take in user inputs and use Regual Expressions and other methods to make sure what the user had enter follows the guide lines for the project. We then had to in a seprate porgram take that .txt file in and use some of the inputs from it to create a .csv file that did some payroll calculations.
+This project was the Final we had for the class. The goal of the project was to be able to create a .txt file in one program that would take in user inputs and use Regular Expressions and other methods to make sure what the user had enter follows the guide lines for the project. We then had to in a separate program take that .txt file in and use some of the inputs from it to create a .csv file that did some payroll calculations.
 </br>
 </details>
 
